@@ -1,0 +1,75 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    {% block 'head' %}{% endblock  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <link rel="icon" type="image/png" href="{% static 'geral/images/favicon.png'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/slick.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/venobox.min.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/select2.min.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/summernote.min.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/nice-select.css'%}">
+
+    <link rel="stylesheet" href="{% static 'geral/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'geral/css/responsive.css'%}">
+    <!-- <link rel="stylesheet" href="css/rtl.css"> -->
+
+    <title>{% block 'titulo' %}{% endblock  %}</title>
+  </head>
+  <body>
+    {% include "partials/topbar.html" %}
+    {% include "partials/navbar.html" %}
+ 
+
+    {% block 'body' %}
+
+    {% block 'conteudo' %}
+    
+    {% endblock %}
+
+
+    {% include "partials/footer.html" %}
+    {% endblock  %}
+
+    
+ <!--=============SCROLL BTN==============-->
+ <div class="scroll_btn">
+    <i class="fas fa-chevron-up"></i>
+</div>
+<!--=============SCROLL BTN==============-->
+
+
+<!--jquery library js-->
+<script src="{% static 'geral/js/jquery-3.6.0.min.js'%}"></script>
+<!--bootstrap js-->
+<script src="{% static 'geral/js/bootstrap.bundle.min.js'%}"></script>
+<!--font-awesome js-->
+<script src="{% static 'geral/js/Font-Awesome.js'%}"></script>
+<!--slick js-->
+<script src="{% static 'geral/js/slick.min.js'%}"></script>
+<!--venobox js-->
+<script src="{% static 'geral/js/venobox.min.js'%}"></script>
+<!--counter js-->
+<script src="{% static 'geral/js/jquery.waypoints.min.js'%}"></script>
+<script src="{% static 'geral/js/jquery.countup.min.js'%}"></script>
+<!--nice select js-->
+<script src="{% static 'geral/js/select2.min.js'%}"></script>
+<!--isotope js-->
+<script src="{% static 'geral/js/isotope.pkgd.min.js'%}"></script>
+<!--summer_note js-->
+<script src="{% static 'geral/js/summernote.min.js'%}"></script>
+<!--select js-->
+<script src="{% static 'geral/js/jquery.nice-select.min.js'%}"></script>
+
+<!--main/custom js-->
+<script src="{% static 'geral/js/main.js'%}"></script>
+
+   
+  </body>
+</html>

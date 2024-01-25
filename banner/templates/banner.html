@@ -1,0 +1,58 @@
+{% load static %} 
+<!--==========================
+        BANNER PART START
+    ===========================-->
+<section id="wsus__banner" 
+style="background: url({{ banners.img.url }}); 
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;">
+
+  <div class="wsus__banner_overlay">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-6 col-lg-7">
+          <div class="wsus__banner_text">
+            <h1>{{ banners.titulo }}</h1>
+            <p>{{ banners.texto }}</p>
+          </div>
+        </div>
+
+        <div class="col-xl-5 col-lg-5">
+          <form>
+            <h3>Explore o vale!</h3>
+            <div class="wsus__search_area">
+              <input type="text" placeholder="Buscar pelo nome do estabelecimento?" />
+            </div>
+            <div class="wsus__search_area">
+              <select class="select_2" name="state">
+                <option value="">Selecione a Categoria</option>
+                <option value="">categories 1</option>
+                <option value="">categories 2</option>
+                <option value="">categories 3</option>
+                <option value="">categories 4</option>
+                <option value="">categories 5</option>
+              </select>
+            </div>
+            <div class="wsus__search_area">
+              <select class="select_2" name="state">
+                <option value="">Selecione a Cidade</option>
+                <option value="">location 1</option>
+                <option value="">location 2</option>
+                <option value="">location 3</option>
+                <option value="">location 4</option>
+                <option value="">location 5</option>
+              </select>
+            </div>
+            <div class="wsus__search_area m-0">
+              <a href="#" class="read_btn">Buscar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--==========================
+        BANNER PART END
+    ===========================-->
