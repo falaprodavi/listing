@@ -1,10 +1,12 @@
 {% load static %} 
+{% url 'home' as home %}
+{% url 'explore' as explore %}
 <!--==========================
         MENU PART START
     ===========================-->
     <nav class="navbar navbar-expand-lg main_menu">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'home' %}" >
                 <img src="{% static 'geral/images/logo.png'%}" alt="DB.Card">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -15,38 +17,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link {% if request.path == home %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">about</a>
+                        <a class="nav-link {% if request.path == explore %} active {% endif %}" href="{% url 'explore' %}" >Explore o Vale</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listing_grid_view.html">listing</a>
+                        <a class="nav-link" href="about.html">Quem Somos</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Dicas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">pages <i class="far fa-chevron-down"></i></a>
-                        <ul class="menu_droapdown">
-                            <li><a href="list_category.html">list category</a></li>
-                            <li><a href="blog_details.html">blog details</a></li>
-                            <li><a href="listing_details.html">listing details</a></li>
-                            <li><a href="dsahboard.html">dashboard</a></li>
-                            <li><a href="agent_public_profile.html">agent profile</a></li>
-                            <li><a href="payment_page.html">Payment Page</a></li>
-                            <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                            <li><a href="terms_conditions.html">Terms Conditions</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">contact us</a>
+                        <a class="nav-link" href="contact.html">Contato</a>
                     </li>
                 </ul>
-                <a class="user_btn" href="dsahboard.html"><i class="far fa-plus"></i> add listing</a>
+                <a class="user_btn" href="dsahboard.html"><i class="far fa-plus"></i>Adicionar</a>
             </div>
         </div>
     </nav>

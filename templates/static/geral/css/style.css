@@ -815,7 +815,6 @@ button {
 
 .wsus__feature_single h5 {
 	color: var(--colorBlack);
-	text-transform: capitalize;
 	font-weight: 600;
 	font-size: 25px;
 	margin: 15px 0px;
@@ -3352,6 +3351,7 @@ PAGINATION PART END
 	left: 0;
 	width: 100%;
 	height: 100%;
+	object-fit: cover !important;
 	background: linear-gradient(0deg, rgba(12, 46, 64, 0.51) 20%, transparent 100%);
 }
 

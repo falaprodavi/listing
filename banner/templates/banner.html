@@ -1,13 +1,14 @@
-{% load static %} 
+{% load static %}
 <!--==========================
         BANNER PART START
     ===========================-->
-<section id="wsus__banner" 
-style="background: url({{ banners.img.url }}); 
+<section
+  id="wsus__banner"
+  style="background: url({{ banners.img.url }}); 
 background-position: center;
 background-size: cover;
-background-repeat: no-repeat;">
-
+background-repeat: no-repeat;"
+>
   <div class="wsus__banner_overlay">
     <div class="container">
       <div class="row justify-content-between">
@@ -19,33 +20,33 @@ background-repeat: no-repeat;">
         </div>
 
         <div class="col-xl-5 col-lg-5">
-          <form>
+          <form action="{% url 'explore' %}" method="GET">
             <h3>Explore o vale!</h3>
             <div class="wsus__search_area">
-              <input type="text" placeholder="Buscar pelo nome do estabelecimento?" />
+              <input
+                type="text"
+                placeholder="Buscar pelo nome do estabelecimento?"
+                name="keywords"
+              />
             </div>
             <div class="wsus__search_area">
-              <select class="select_2" name="state">
+              <select class="select_2" name="categoria">
                 <option value="">Selecione a Categoria</option>
-                <option value="">categories 1</option>
-                <option value="">categories 2</option>
-                <option value="">categories 3</option>
-                <option value="">categories 4</option>
-                <option value="">categories 5</option>
+                {% for categoria in categorias %}
+                <option value="{{categoria.id}}">{{categoria.nome}}</option>
+                {% endfor %}
               </select>
             </div>
             <div class="wsus__search_area">
-              <select class="select_2" name="state">
+              <select class="select_2" name="cidade">
                 <option value="">Selecione a Cidade</option>
-                <option value="">location 1</option>
-                <option value="">location 2</option>
-                <option value="">location 3</option>
-                <option value="">location 4</option>
-                <option value="">location 5</option>
+                {% for cidade in cidades %}
+                <option value="{{cidade.id}}">{{cidade.nome}}</option>
+                {% endfor %}
               </select>
             </div>
             <div class="wsus__search_area m-0">
-              <a href="#" class="read_btn">Buscar</a>
+              <input class="read_btn" type="submit" value="BUSCAR" />
             </div>
           </form>
         </div>

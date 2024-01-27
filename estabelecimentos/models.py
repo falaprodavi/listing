@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Imagem(models.Model):
@@ -42,6 +43,11 @@ class Estabelecimento(models.Model):
     descricao = models.TextField()
     imagens = models.ManyToManyField(Imagem)
     video = models.TextField()
+    slug = models.SlugField(null=False, unique=True)  # new
+    destaque = models.BooleanField(default=False)
         
     def __str__(self) -> str:
         return self.rua
+    
+    def get_absolute_url(self):
+        return reverse("estabelecimento", kwargs={"slug": self.slug})
