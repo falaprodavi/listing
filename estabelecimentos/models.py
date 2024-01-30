@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Imagem(models.Model):
@@ -40,7 +41,7 @@ class Estabelecimento(models.Model):
     bairro = models.CharField(max_length=50)
     cidade = models.ForeignKey(Cidade, on_delete=models.DO_NOTHING)
     mapa = models.TextField()
-    descricao = models.TextField()
+    descricao = RichTextField()
     imagens = models.ManyToManyField(Imagem)
     video = models.TextField()
     slug = models.SlugField(null=False, unique=True)  # new

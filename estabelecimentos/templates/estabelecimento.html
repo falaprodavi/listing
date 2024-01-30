@@ -1,14 +1,23 @@
-{% extends 'base.html' %} {% block 'head' %} {% load static %} {% endblock %}
-{%block 'titulo' %}O Vale On-Line{% endblock %} {% block 'conteudo' %}
-
+{% extends 'base.html' %} 
+{% block 'head' %} 
+{% load static %} 
+{% endblock %}
+{%block 'titulo' %}
+O Vale On-Line - Explore o Vale do Paraíba
+{% endblock %} 
+{% block 'conteudo' %}
 <!--==========================
         BREADCRUMB PART START
     ===========================-->
 <div
   id="breadcrumb_part"
-  style="background: url({{ estabelecimento.imagens.all.0.img.url }})"
+  style="background: url({{ estabelecimento.imagens.all.0.img.url }});
+  background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+height: 160px"
 >
-  <div class="bread_overlay">
+  <div class="bread_overlay" style="height: 160px;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 text-center text-white">
@@ -49,8 +58,7 @@
             <div class="listing_det_header_text">
               <h6>{{ estabelecimento.nome }}</h6>
               <p class="host_name">
-                {{ estabelecimento.rua}}, {{ estabelecimento.numero}}, {{
-                estabelecimento.bairro}}, {{ estabelecimento.cidade}}
+                {{ estabelecimento.rua }}, {{ estabelecimento.numero }}, {{ estabelecimento.bairro }}, {{ estabelecimento.cidade }}
               </p>
 
               <ul>
@@ -64,14 +72,11 @@
             </div>
           </div>
           <div class="listing_det_Photo">
-
             <div class="row">
-                
               {% for img in estabelecimento.imagens.all %}
               <div class="col-xl-3 col-sm-6">
-
                 <a class="venobox" data-gall="gallery01" href="{{img}}">
-                  <img src="{{img}}" alt="gallery1" class="img-fluid w-100" />
+                  <img src="{{img}}"/>
                   <div class="photo_overlay">
                     <i class="fal fa-plus"></i>
                   </div>
@@ -80,9 +85,11 @@
               {% endfor %}
             </div>
           </div>
-          <div class="listing_det_text">
-            <h5>Descrição</h5>
-            <p>{{ estabelecimento.descricao }}</p>
+          <div class="listing_det_text" >
+            <br/>
+            <h5 style="">Descrição</h5>
+            <br/>
+            <p style="text">{{ estabelecimento.descricao|safe }}</p>
           </div>
 
           <div class="listing_det_location">
@@ -103,13 +110,11 @@
             <div class="col-12">
               <div class="listing_det_side_address">
                 <a href="{{ estabelecimento.telefone }}"
-                  ><i class="fal fa-phone-alt"></i> {{ estabelecimento.telefone
-                  }}</a
+                  ><i class="fal fa-phone-alt"></i> {{ estabelecimento.telefone }}</a
                 >
 
                 <p>
-                  <i class="fal fa-map-marker-alt"></i> {{
-                  estabelecimento.cidade }}
+                  <i class="fal fa-map-marker-alt"></i> {{ estabelecimento.cidade }}
                 </p>
                 <p><i class="fal fa-globe"></i> {{ estabelecimento.site }}</p>
                 <ul>

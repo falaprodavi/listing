@@ -80,7 +80,7 @@ O Vale On-Line - Explore o Vale do Paraíba
           <div class="col-xl-4 col-sm-6">
             <div class="wsus__featured_single">
               <div class="wsus__featured_single_img">
-                <a href="{% url 'estabelecimento' estabelecimento.id %}">
+                <a href="{% url 'estabelecimento' estabelecimento.slug %}">
                 <img
                   src="{{ estabelecimento.imagens.all.0.img.url }}"
                   alt="images"
@@ -107,7 +107,7 @@ O Vale On-Line - Explore o Vale do Paraíba
                   <i class="fas fa-star-half-alt"></i>
                   <span>(5 review)</span>
                 </p>
-                <a href="{% url 'estabelecimento' estabelecimento.id %}">{{ estabelecimento.nome }}</a>
+                <a href="{% url 'estabelecimento' estabelecimento.slug %}">{{ estabelecimento.nome }}</a>
                 <p class="address">{{ estabelecimento.cidade }}</p>
               </div>
             </div>

@@ -883,7 +883,7 @@ button {
 
 .wsus__counter_overlay {
 	background: #000000d1;
-	padding: 80px 0px 96px 0px;
+	padding: 180px 0px 180px 0px;
 }
 
 #wsus__counter .wsus__heading_area {
@@ -2263,7 +2263,7 @@ footer h3 {
 
 .bread_overlay {
 	background: rgb(0 0 0 / 43%);
-	padding: 90px 0px 75px 0px;
+	padding: 30px 0px 20px 0px;
 }
 
 #breadcrumb_part h4 {
@@ -3342,7 +3342,9 @@ PAGINATION PART END
 	position: relative;
 	border-radius: 3px;
 	overflow: hidden;
-	margin-bottom: 15px;
+	width: 100%;
+	height: 180px
+
 }
 
 .listing_det_Photo .photo_overlay {
@@ -3427,6 +3429,7 @@ PAGINATION PART END
 	left: 0;
 	width: 100%;
 	height: 100%;
+
 }
 
 .listing_det_video_img .venobox i {
