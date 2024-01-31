@@ -1,48 +1,58 @@
 <!--==========================
         OUR LOCATION START
     ===========================-->
-    <section id="wsus__location">
-        <div class="wsus__location_overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 m-auto">
-                        <div class="wsus__heading_area">
-                            <h2>Our location </h2>
-                            <p>Lorem ipsum dolor sit amet, qui assum oblique praesent te. Quo ei erant essent scaevola
-                                estut clita dolorem ei est mazim fuisset scribentur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="wsus__location_filter">
-                            <button class="active" data-filter="*">Cidades</button>
-
-                            {% for cidade in cidades %}
-                            <button data-filter=".{{ cidade.id }}">{{ cidade.nome }}</button>
-                            {% endfor %}
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row grid">
-                    {% for cidade in cidades %}
-                    <div class="col-xl-3 col-sm-6 col-lg-4 {{ cidade.id }}">
-                        <a href="#" class="wsus__single_location">
-                            <div class="img">
-                                <img src="{{ cidade.img.url }}" alt="location" class="img-fluid w-100">
-                            </div>
-                            <div class="wsus__location_text">
-                                <p>{{ cidade.nome }}</p>
-                                <span>2 listing</span>
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+<section id="wsus__location">
+  <div class="wsus__location_overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 m-auto">
+          <div class="wsus__heading_area">
+            <h2>Localizações</h2>
+            <p>
+              Estamos cadastrando os melhores estabelecimentos de toda a região
+              do Vale do Paraíba. Nosso objetivo é proporcionar uma experiência
+              para os visitantes única, facilitando o acesso aos
+              estabelecimentos
+            </p>
+          </div>
         </div>
-    </section>
-    <!--==========================
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="wsus__location_filter">
+            <button class="active" data-filter="*">Todas Cidades</button>
+
+            {% for cidade in cidades %}
+            <button data-filter=".{{ cidade.id }}">{{ cidade.nome }}</button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row grid">
+        {% for cidade in cidades %}
+        <div class="col-xl-3 col-sm-6 col-lg-4 {{ cidade.id }}">
+          <a
+            href="/explore/?cidade={{ cidade.id }}"
+            class="wsus__single_location"
+          >
+            <div class="img">
+              <img
+                src="{{ cidade.img.url }}"
+                alt="location"
+                class="img-fluid w-100"
+              />
+            </div>
+            <div class="wsus__location_text">
+              <p>{{ cidade.nome }}</p>
+              <span>{{ cidade.nome }}</span>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!--==========================
         OUR LOCATION END
     ===========================-->

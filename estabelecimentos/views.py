@@ -10,7 +10,13 @@ def home(request):
     banners = Banner.objects.last()
     categorias = Categoria.objects.all()
     cidades = Cidade.objects.all()              
-    return render(request, 'home.html', {'banners' : banners, 'categorias': categorias, 'cidades' : cidades})
+    estabelecimentos = Estabelecimento.objects.all().filter(destaque=True)            
+    return render(request, 'home.html', {
+        'banners' : banners, 
+        'categorias': categorias, 
+        'cidades' : cidades,
+        'estabelecimentos' : estabelecimentos,
+        })
 
 def explore(request):      
     res = Estabelecimento.objects.all()     
@@ -42,7 +48,9 @@ def explore(request):
     }    
     return render(request, 'explore.html', context)
 
+
 def estabelecimento(request, slug):
     estabelecimento = get_object_or_404(Estabelecimento, slug=slug)
     return render (request, 'estabelecimento.html', {'estabelecimento' : estabelecimento})
+
     

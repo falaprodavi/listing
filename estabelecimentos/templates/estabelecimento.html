@@ -3,7 +3,7 @@
 {% load static %} 
 {% endblock %}
 {%block 'titulo' %}
-O Vale On-Line - Explore o Vale do Paraíba
+O Vale On-Line - {{ estabelecimento.nome }}
 {% endblock %} 
 {% block 'conteudo' %}
 <!--==========================
@@ -21,7 +21,7 @@ height: 160px"
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 text-center text-white">
-          <h4>{{ estabelecimento.nome }}</h4>
+          <h4>{{ estabelecimento.nome }}{{ estabelecimento.nome }}</h4>
           <nav style="--bs-breadcrumb-divider: ''" aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#"> Home </a></li>
