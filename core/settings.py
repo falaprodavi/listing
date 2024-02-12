@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'estabelecimentos',
     'banner',
+    'about',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,76 @@
+{% extends 'base.html' %} 
+{% block 'head' %} 
+{% load static %} 
+{% endblock %}
+{%block 'titulo' %}
+O Vale On-Line - Explore o Vale do Paraíba
+{% endblock %} 
+{% block 'conteudo' %}
+
+<!--==========================
+        BREADCRUMB PART START
+    ===========================-->
+    <div id="breadcrumb_part">
+        <div class="bread_overlay">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center text-white">
+                        <h4>About</h4>
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"> Home </a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> About </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==========================
+        BREADCRUMB PART END
+    ===========================-->
+
+
+    <!--==========================
+        ABOUT  START
+    ===========================-->
+    <section id="about_page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about_text">
+                        <h4>{{ abouts.titulo }}</h4>
+                        {{ abouts.descricao|safe }}
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="about_img">
+                        <img src="{{ abouts.img_video.url }}" alt="about" class="img-fluid w-100">
+                        <a class="venobox" data-autoplay="true" data-vbtype="video" href="{{ abouts.link_video }}">
+                            <i class=" fas fa-play"></i>
+                        </a>
+                        <div class="img_2">
+                            <img src="{{ abouts.img.url }}" alt="about" class="img-fluid w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==========================
+        ABOUT END
+    ===========================-->
+
+    <div class="row">
+        <div class="col-xl-5 m-auto">
+            <div class="wsus__heading_area">
+                <h2>Principais Categorias</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra at mauris sit amet maximus. Vestibulum eu nunc ac mauris mollis tempor. Mauris ut eros eros. Aenean tempus luctus ligula ac feugiat.</p>
+            </div>
+        </div>
+    </div>
+
+{% include "categorias.html" %}
+
+{% endblock %}
